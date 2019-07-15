@@ -1,0 +1,10 @@
+# Criando um deployment
+$ kubectl create deployment hello-nginx --image=nginx:1.17-alpine
+$ kubectl get deplyments
+
+# criando um servico para expor o POD
+$ kubectl expose deployment hello-nginx --type=LoadBalancer --port=80
+
+$ kubectl get services
+
+$ minikube service hello-nginx
