@@ -8,3 +8,9 @@ $ kubectl expose deployment hello-nginx --type=LoadBalancer --port=80
 $ kubectl get services
 
 $ minikube service hello-nginx
+
+# criando um secret para senha do MYSQL_ROOT_PASSWORD
+$ kubectl create secret generic mysql-pass --from-literal=password='123456'
+
+$ minikube dashboard  
+$ minikube service
