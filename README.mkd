@@ -1,29 +1,4 @@
-# Criando um deployment
-$ kubectl create deployment hello-nginx --image=nginx:1.17-alpine
-$ kubectl get deplyments
-
-# criando um servico para expor o POD
-$ kubectl expose deployment hello-nginx --type=LoadBalancer --port=80
-
-$ kubectl get services
-
-$ minikube service hello-nginx
-
-# criando um secret para senha do MYSQL_ROOT_PASSWORD
-$ kubectl create secret generic mysql-pass --from-literal=password='123456'
-
-# Criando um volume persistente
-$ kubectl apply -f mysql/persistent-volume.yaml
-
-
-
-
-$ minikube service
-$ minikube delete
-
-
-
-## Criando um Deploy no Minikube
+# Criando um Deploy no Minikube
 
 ### Iniciando a instância
 Executar os comando para iniciar os testes e ver o status do host
@@ -59,4 +34,29 @@ kubectl apply -f nginx/service.yaml
 Para acessar o Load Balancer no navegador
 ```
 $ minikube service nginx-service
+```
+
+
+
+# Deploy com linha de comando
+
+### Criando um deployment hardcore
+```
+$ kubectl create deployment hello-nginx --image=nginx:1.17-alpine
+$ kubectl get deplyments
+```
+### Criando um servico para expor o POD
+```
+$ kubectl expose deployment hello-nginx --type=LoadBalancer --port=80
+$ kubectl get services
+$ minikube service hello-nginx
+```
+
+### criando um secret para senha do MYSQL_ROOT_PASSWORD
+```
+$ kubectl create secret generic mysql-pass --from-literal=password='123456'
+```
+### Criando um volume persistente
+```
+$ kubectl apply -f mysql/persistent-volume.yaml
 ```
