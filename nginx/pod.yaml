@@ -1,8 +1,15 @@
 apiVersion: v1
 kind: Pod
 metadata:
-    name: pod-exemplo
+    name: nginx
 spec:
     containers:
-    - name: pod-examplo
+    - name: nginx
         image: nginx:1.17-alpin
+        resources:
+          limits:
+            memory: "200Mi"
+          requests:
+            memory: "100Mi"
+        command: ["sed"]
+        args: ["s/Welcome to nginx/Letsrock/g","/usr/share/nginx/html/index.html"]
