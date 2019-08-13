@@ -67,17 +67,14 @@ nginx-649d9644f6-t9bs2          1/1     Running   0          117m   app=nginx,po
 ```
 
 
+## Deploy com linha de comando
 
-
-
-# Deploy com linha de comando
-
-### Criando um deployment hardcore
+Criando um deployment hardcore
 ```
 $ kubectl create deployment hello-nginx --image=nginx:1.17-alpine
 $ kubectl get deplyments
 ```
-### Criando um servico para expor o POD
+Criando um servico para expor o POD
 ```
 $ kubectl expose deployment hello-nginx --type=LoadBalancer --port=80
 $ kubectl get services
